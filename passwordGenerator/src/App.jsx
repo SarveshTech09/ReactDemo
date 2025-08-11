@@ -17,45 +17,24 @@ function App() {
             let pass = ''
             let str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
             // Adding numbers to the string if numberAllowed is true
-            // This allows the user to include numbers in the generated password.
-            // Numbers can enhance the complexity of the password.
             // The characters added are digits from 0 to 9.
-            // This is useful for creating more secure passwords.
-            // The string is built dynamically based on the user's preferences.
-            // If numberAllowed is true, numbers are added to the string.
-            // This allows for more flexibility in password generation. 
             if (numberAllowed) {
               str += '0123456789'
             }
             // Adding special characters to the string if charAllowed is true
             // This allows the user to include special characters in the generated password.
-            // Special characters can enhance the security of the password.
-            // The characters added are commonly used special characters that are often allowed in passwords.
-            // This is useful for creating more complex and secure passwords.
-            // The string is built dynamically based on the user's preferences.
-            // If charAllowed is true, special characters are added to the string.
-            // This allows for more flexibility in password generation.
-            // The special characters included are commonly used in passwords.
-            // This enhances the complexity and security of the generated password. 
             if (charAllowed) {
               str += '!@#$%^&*()_+[]{}|;:,.<>?'
             }
             // Loop to generate the password
             // The loop runs for the specified length of the password.
-            // It randomly selects characters from the string created above.
-            // The password is built character by character.  
             for (let i = 1; i < length; i++)
             {
                 let char = Math.floor(Math.random() * str.length + 1)
                 pass +=str.charAt(char)
             }
-            // Setting the generated password to the state variable
+            // Setting the genera ted password to the state variable
             // This updates the password state with the newly generated password.
-            // The password can then be displayed in the input field.
-            // This allows the user to see the generated password.
-            // The password is generated based on the user's preferences.
-            // The generated password is a random combination of characters, numbers, and special characters.
-            // This enhances the security and complexity of the password.   
             setPassword(pass)
           }, 
           [length, numberAllowed, charAllowed, setPassword]
